@@ -1,0 +1,27 @@
+<nb-card>
+    <nb-card-body>
+     
+    </nb-card-body>
+  </nb-card>
+        <nb-card>
+          <nb-card-body>
+            <div class="buttons-row">  
+              <div *ngIf="admin" ><button nbButton name="hello" status="success" (click)="addDossier()">AJOUTER
+              </button></div>           
+              <div *ngIf="user" > <button nbButton status="success" (click)="onConfirmer()">CONFIRMER </button></div>
+            </div>
+          </nb-card-body>
+        </nb-card>
+  <nb-card>
+      <nb-card-header>
+        Table des demandes
+      </nb-card-header>
+      <nb-card-body>
+        <ng2-smart-table [settings]="settings" 
+        [source]="source" 
+        (deleteConfirm)="onDeleteConfirm($event)"
+        (custom)="onCostum($event)">
+        </ng2-smart-table>
+      </nb-card-body>
+    </nb-card>
+    

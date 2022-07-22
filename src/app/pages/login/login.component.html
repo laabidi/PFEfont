@@ -1,0 +1,92 @@
+
+<div class="container-fluid px-1 px-md-5 px-lg-1 px-xl-5 py-5 mx-auto">
+    <div class="card card0 border-0">
+        <div class="row d-flex">
+            <div class="col-lg-6">
+                <div class="card1 pb-5">
+                    <div class="row px-3 justify-content-center mt-4 mb-5 border-line">
+                        <img src="../../../assets/images/loginfin.png" class="image">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card2 card border-0 px-4 py-5">
+                    <form
+                       *ngIf="!isLoggedIn"
+                        name="form"
+                        (ngSubmit)="f.form.valid && onSubmit()"
+                        #f="ngForm"
+                        novalidate>
+                    <div class="row px-3">
+                        <label class="mb-1"><h6 class="mb-0 text-sm">Nom:</h6></label>
+                        <input type="text"
+                        class="form-control"
+                        name="username"
+                        [(ngModel)]="form.username"
+                        required
+                        #username="ngModel" class="mb-4" placeholder="Entrer votre nom">
+                    </div>
+                    <div
+                    class="alert alert-danger"
+                    role="alert"
+                    *ngIf="username.errors && f.submitted">
+                  Nom d'utilisateur est requis</div>
+                    <div class="row px-3">
+                        <label class="mb-1"><h6 class="mb-0 text-sm">Mot de passe</h6></label>
+                        <input input
+                        type="password"
+                        class="form-control"
+                        name="password"
+                        [(ngModel)]="form.password"
+                        required
+                        minlength="6"
+                        #password="ngModel" placeholder="Entrer votre mot de passe">
+                    </div>
+                    <div
+            class="alert alert-danger"
+            role="alert"
+            *ngIf="password.errors && f.submitted"
+          >
+            <div *ngIf="password.errors.required">Mot de passe requis</div>
+            <div *ngIf="password.errors.minlength">
+              Le mot de passe doit être au moins de 6 caractères</div>
+          </div>
+                    <div class="row px-3 mb-4">
+        
+                        <a href="#" class="ml-auto mb-0 text-sm">Mot de passe oublié?</a>
+                    </div>
+                    <div class="row mb-3 px-3">
+                        <button type="submit" class="btn btn-blue text-center">Se connecter</button>
+                    </div>
+                    <div class="form-group">
+                      <div
+                        class="alert alert-danger"
+                        role="alert"
+                        *ngIf="f.submitted && isLoginFailed"
+                      >
+                      Échec de la connexion: {{ errorMessage }}
+                      </div>
+                    </div>
+                  </form>
+                  <div class="alert alert-success" *ngIf="isLoggedIn">
+                    connecté en tant que {{ roles }}.
+                  </div>
+                    <div class="row mb-4 px-3">
+                        <small class="font-weight-bold">Vous n'avez pas de compte ? <a class="text-danger " routerLink="../register">S'inscrire</a></small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-blue py-4">
+            <div class="row px-3">
+                <small class="ml-4 ml-sm-5 mb-2">Copyright &copy; 2022. All rights reserved.</small>
+                <div class="social-contact ml-4 ml-sm-auto">
+                    <span class="fa fa-facebook mr-4 text-sm"></span>
+                    <span class="fa fa-google-plus mr-4 text-sm"></span>
+                    <span class="fa fa-linkedin mr-4 text-sm"></span>
+                    <span class="fa fa-twitter mr-4 mr-sm-5 text-sm"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

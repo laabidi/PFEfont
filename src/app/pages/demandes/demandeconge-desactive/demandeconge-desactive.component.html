@@ -1,0 +1,17 @@
+<nb-card>
+    <nb-card-body>
+      <nb-route-tabset [tabs]="tabs" fullWidth></nb-route-tabset>
+    </nb-card-body>
+  </nb-card>
+  <nb-card>
+      <nb-card-header>
+        Table des demandes
+      </nb-card-header>
+      <nb-card-body>
+        <ng2-smart-table [settings]="settings" 
+        [source]="source" 
+        (deleteConfirm)="onDeleteConfirm($event)"
+        (custom)="onCostum($event)">
+        </ng2-smart-table>
+      </nb-card-body>
+    </nb-card>

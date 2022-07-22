@@ -1,0 +1,31 @@
+<div class="row form-group">
+   <div class="input-group col-md-12 col-lg-12 input-group-sm">
+      <label>Username :</label>
+      <input type="text" name="username" nbInput fullWidth placeholder="username" [(ngModel)]="utilisateur.username"  />
+   </div>
+ </div>
+   <div class="row form-group">
+      <div class="input-group col-md-6 col-lg-6 input-group-sm">
+         <label class="text-label">email :</label>
+         <input type="text" name="email" nbInput fullWidth placeholder="email" [(ngModel)]="utilisateur.email"  />
+      </div>
+      <div class="input-group col-md-6 col-lg-6 input-group-sm">
+         <label class="text-label">telephone :</label>
+         <input type="text" name="telephone" nbInput fullWidth placeholder="telephone" [(ngModel)]="utilisateur.telephone" />
+      </div>
+   </div>
+   <div class="row form-group">
+     <div class="input-group col-md-12 col-lg-12 input-group-sm">
+       <label>adresse : </label>
+       <input type="text" name="adresse" nbInput fullWidth placeholder="adresse"
+       [(ngModel)]="utilisateur.adresse" />
+     </div>
+   </div>
+    <div class="row form-group">
+        <div class="input-group col-md-6 col-lg-6 input-group-sm"></div>
+         <div class="input-group col-md-6 col-lg-6 input-group-sm d-flex justify-content-end">
+               <button class="mr-1 mb-2" nbButton status="success" (click)="onAddTM()">
+               {{ATM}}</button>
+               <button (click)="onclose()" class="mb-2" nbButton status="danger">Annuler</button>
+         </div>
+      </div>

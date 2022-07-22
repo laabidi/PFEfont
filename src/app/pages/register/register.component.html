@@ -1,0 +1,125 @@
+
+
+  <div class="container-fluid px-1 px-md-5 px-lg-1 px-xl-5 py-5 mx-auto">
+    <div class="card card0 border-0">
+        <div class="row d-flex">
+            <div class="col-lg-6">
+                <div class="card1 pb-5">
+                  <br><br><br><br><br>
+                    <div class="row px-3 justify-content-center mt-4 mb-5 border-line">
+                        <img src="../../../assets/images/loginfin.png" class="image">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card2 card border-0 px-4 py-5">
+                  <form
+                  *ngIf="!isSuccessful"
+                  name="form"
+                  (ngSubmit)="f.form.valid && onSubmit()"
+                  #f="ngForm"
+                  novalidate
+                >
+                    <div class="row px-3">
+                        <label class="mb-1"><h6 class="mb-0 text-sm">Nom:</h6></label>
+                        <input
+                        type="text"
+                        class="form-control"
+                        name="username"
+                        [(ngModel)]="form.username"
+                        required
+                        minlength="3"
+                        maxlength="20"
+                        #username="ngModel"
+                        class="mb-4" placeholder="Entrer votre nom">
+                    </div>
+                    <div class="alert-danger" *ngIf="username.errors && f.submitted">
+                      <div *ngIf="username.errors.required">Nom d'utilisateur est requis</div>
+                      <div *ngIf="username.errors.minlength">
+                        Le nom d'utilisateur doit comporter au moins 3 caractères </div>
+                      <div *ngIf="username.errors.maxlength">
+                        Le nom d'utilisateur doit comporter au maximum 20 caractères</div>
+                    </div>
+
+                    <div class="row px-3">
+                      <label class="mb-1"><h6 class="mb-0 text-sm">Email:</h6></label>
+                      <input
+                        type="email"
+                        class="form-control"
+                        name="email"
+                        [(ngModel)]="form.email"
+                        required
+                        email
+                        #email="ngModel"
+                        minlength="3"
+                        maxlength="20"
+                        class="mb-4" placeholder="Entrer votre email"
+                      />
+                      <div class="alert-danger" *ngIf="email.errors && f.submitted">
+                        <div *ngIf="email.errors.required">Email est requis</div>
+                        <div *ngIf="email.errors.email">
+                          L'e-mail doit être une adresse e-mail valide
+                        </div>
+                      </div>
+
+                    </div>
+
+
+                    <div class="row px-3">
+                        <label class="mb-1"><h6 class="mb-0 text-sm">Mot de passe</h6></label>
+                        <input input
+                        type="password"
+                        class="form-control"
+                        name="password"
+                        [(ngModel)]="form.password"
+                        required
+                        minlength="6"
+                        #password="ngModel" placeholder="Entrer votre mot de passe">
+                        <div class="alert-danger" *ngIf="password.errors && f.submitted">
+                          <div *ngIf="password.errors.required">Mot de passe est requis</div>
+                          <div *ngIf="password.errors.minlength">
+                            Le mot de passe doit être au moins de 6 caractères                          </div>
+                        </div>
+                    </div>
+
+                    <div class="row px-3">
+                      <label class="mb-1"><h6 class="mb-0 text-sm">Confirmer mot de passe</h6></label>
+                      <input input
+                      type="password"
+                      class="form-control"
+                      name="confirmePass"
+                      [(ngModel)]="form.passwordC"
+                      required
+                      minlength="6"
+                      #password="ngModel" placeholder="Entrer votre mot de passe">
+                      <div class="alert-danger" *ngIf="password.confirmePass != password.password && f.submitted">
+                        <div *ngIf="password.errors.required">Mot de passe est requis</div>
+                        <div *ngIf="password.errors.minlength">
+                          Le mot de passe doit être au moins de 6 caractères </div>
+                          <div *ngIf="password.confirmePass != password.password">Le mot de passe est non confirmé</div>
+                      </div>
+                  </div>
+                   <br><br>
+                    <div class="row mb-3 px-3">
+                        <button type="submit" class="btn btn-blue text-center">S'inscrire</button>
+                    </div>
+                    <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+                      L'inscription a échoué !<br />{{ errorMessage }}
+                    </div>
+                  </form>
+                  <div class="alert alert-success" *ngIf="isSuccessful">
+                    Votre inscription est réussie ! </div>
+                    <div class="row mb-4 px-3">
+                      <small class="font-weight-bold">Vous avez déjà un compte ? <a class="text-danger " routerLink="../login">Se connecter</a></small>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-blue py-4">
+            <div class="row px-3">
+                <small class="ml-4 ml-sm-5 mb-2">Copyright &copy; 2022. All rights reserved.</small>
+                
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="header-container" *ngIf="hide">
+  <div class="logo-container">
+    <a (click)="toggleSidebar()" href="#" class="sidebar-toggle">
+      <nb-icon icon="menu-2-outline"></nb-icon>
+    </a>
+    <a class="logo" href="#" (click)="navigateHome()">SMART<span>UP</span></a>
+  </div>
+  <nb-select [selected]="currentTheme" (selectedChange)="changeTheme($event)" status="primary">
+    <nb-option *ngFor="let theme of themes" [value]="theme.value"> {{ theme.name }}</nb-option>
+  </nb-select>
+  <div class="row px-3 justify-content-center mt-4 mb-5 border-line">
+    <img src="../../../assets/images/logoupp.png" class="image" width="220px" height="105px" >
+</div>
+
+<marquee behavior="scroll" direction="left">
+  <img src="../../../assets/images/bar.png" class="image" height="57px" >
+</marquee>
+</div>
+
+<div class="header-container" *ngIf="hide">
+  <nb-actions size="small">
+
+    <nb-action class="control-item">
+      <nb-search type="rotate-layout"></nb-search>
+    </nb-action>
+   
+    <nb-action class="user-action" *nbIsGranted="['view', 'user']" >
+      <div *ngIf="hhh" ><nb-user [nbContextMenu]="userMenu"
+               [onlyPicture]="userPictureOnly"
+               [name]="profile"
+               [picture]="user?.picture">
+      </nb-user> </div>
+    </nb-action> 
+    <nb-action>     <div *ngIf="hhh" > <button  class="btn btn-blue text-center" (click)="logout()">Déconnecter</button></div>
+    </nb-action>
+  </nb-actions>
+</div>

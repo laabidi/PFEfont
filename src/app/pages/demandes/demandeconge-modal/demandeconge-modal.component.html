@@ -1,0 +1,55 @@
+<div class="row form-group">
+   <div class="input-group col-md-12 col-lg-12 input-group-sm">
+      <label>Id :</label>
+      <input type="number" name="code" nbInput fullWidth placeholder="code" [(ngModel)]="demandeconge.employerInfosRhDemTypeId" />
+   </div>
+ </div>
+   <div class="row form-group">
+      <div class="input-group col-md-6 col-lg-6 input-group-sm">
+         <label class="text-label">Date Début :</label>
+         <input type="date" data-date-format="DD MMMM YYYY" value="2015-08-09" name="date debut" nbInput fullWidth placeholder="date début" [(ngModel)]="demandeconge.employerCongesDemDateDeb" />
+      </div>
+      <div class="input-group col-md-6 col-lg-6 input-group-sm">
+         <label class="text-label">Date Fin :</label>
+         <input type="date" data-date-format="DD MMMM YYYY" value="2015-08-09" name="date fin" nbInput fullWidth placeholder="date fin" [(ngModel)]="demandeconge.employerCongesDemDateFin" />
+      </div>
+   </div>
+   <div class="row form-group">
+     <div class="input-group col-md-12 col-lg-12 input-group-sm">
+       <label>Nbr de Jours: </label>
+       <input type="number" name="nbr de jours" nbInput fullWidth placeholder="nbr de jours"
+       [(ngModel)]="demandeconge.employerCongesDemNbrJrs" />
+     </div>
+   </div>
+   <div class="row form-group">
+      <div class="input-group col-md-12 col-lg-12 input-group-sm">
+         <label>Motif :</label>
+         <input type="text" name="Quantite" nbInput fullWidth placeholder="motif" [(ngModel)]="demandeconge.employerCongesDemMotif" />
+      </div>
+   </div>
+   <div class="row form-group">
+      <div class="input-group col-md-12 col-lg-12 input-group-sm">
+         <label>Délégation :</label>
+         <input type="text" name="Quantite" nbInput fullWidth placeholder="délégation" [(ngModel)]="demandeconge.employerCongesDemTachesDele" />
+      </div>
+   </div>
+   <div class="row form-group">
+      <div class="input-group col-md-12 col-lg-12 input-group-sm">
+         <label>Status :</label>
+         <input type="text" name="Quantite" nbInput fullWidth placeholder="status" [(ngModel)]="demandeconge.employerCongesDemStatut" />
+      </div>
+      <div class="row form-group">
+         <div class="input-group col-md-12 col-lg-12 input-group-sm">
+            <label>Date :</label>
+            <input type="date" data-date-format="DD MMMM YYYY" value="2015-08-09" name="date" nbInput fullWidth placeholder="date" [(ngModel)]="demandeconge.employerCongesDemDate" />
+         </div>
+      </div>
+   </div>
+   <div class="row form-group">
+     <div class="input-group col-md-6 col-lg-6 input-group-sm"></div>
+      <div class="input-group col-md-6 col-lg-6 input-group-sm d-flex justify-content-end">
+            <button class="mr-1 mb-2" nbButton status="success" (click)="onAddTM()">
+            {{X}}</button>
+            <button (click)="onclose()" class="mb-2" nbButton status="danger">Annuler</button>
+      </div>
+   </div>
